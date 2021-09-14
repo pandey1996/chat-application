@@ -14,8 +14,8 @@ const messagesSchema=new mongoose.Schema({
     message: {
         type: String,
         required: true
-    }
+    },
 });
-
-const Messages=mongoose.Model('Messages',messagesSchema);
+messagesSchema.index({createdAt: 1},{expireAfterSeconds: 216000});
+const Messages=mongoose.model('Messages',messagesSchema);
 module.exports=Messages;

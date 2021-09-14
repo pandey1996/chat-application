@@ -3,6 +3,8 @@ const port=8080;
 const app=express();
 const expressLayouts=require('express-ejs-layouts');
 
+const db= require('./configs/mongoose');
+
 app.use(express.urlencoded());
 //Defining default Views
 app.set('view engine','ejs');

@@ -1,11 +1,12 @@
 const mongoose=require('mongoose');
 
-main().catch(err => console.log(err));
+mongoose.connect('mongodb://localhost/chatApplication');
 
-async function main(){
-    await mongoose.connect('mongodb://localhost:27017/ChatAppDev');
-}
-mongoose.connection.once('open',function(){
-    console.log('DB connnected');
+const db=mongoose.connection;
+
+db.on('error', console.error.bind("EROROROROROAOSOASDOAS!!!!!!!"));
+db.once('open',function(){
+    console.log("Mongo Mongo bongo bongo !!!!!");
 });
-module.exports=mongoose.connection;
+
+module.exports=db;

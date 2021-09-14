@@ -13,10 +13,8 @@ const userSchema=new mongoose.Schema({
         type: String
     },
     profileImg:{
-        type: URL
+        type: String
     }
-},{
-    timestamps: true
 });
 
 const User=mongoose.model('User',userSchema);
